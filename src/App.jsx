@@ -8,17 +8,19 @@ import { useState } from 'react'
 
 function App() {
     const [page, setPage] = useState('board')
+    const[sidebarCollapsed, setSidebarCollapsed] = useState(false)
+
     return (
-        <div className="app-shell" id="appShell">
+            <div className={`app-shell${sidebarCollapsed ? " sidebar-collapsed" : ""}`} id="appShell">
             <Sidebar setPage={setPage} page={page}/>
             <div className="app-main">
-                <Header />
+                <Header setSidebarCollapsed={setSidebarCollapsed}/>
 
                 <main className="page-area">
-                    {page === 'board && <PageBoard />'}
-                    {page === 'board && <PagePeople />'}
-                    {page === 'board && <PageActivity />'}
-                    {page === 'board && <PageSettings />'}
+                    {page === 'board' && <PageBoard />}
+                    {page === 'people' && <PagePeople />}
+                    {page === 'activity' && <PageActivity />}
+                    {page === 'settings' && <PageSettings />}
                 </main>
             </div>
         </div>

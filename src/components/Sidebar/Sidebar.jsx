@@ -9,7 +9,7 @@ const Sidebar = ({page, setPage}) => {
             </div>
 
             <nav className="nav">
-                <button onClick={() => setPage('board')} className="nav-link" data-page="board">
+                <button onClick={() => setPage('board')} className={`nav-link${page === 'board' ? " active" : ""}`} data-page="board">
                     <span className="nav-icon">
                         <svg
                             viewBox="0 0 24 24"
@@ -22,7 +22,7 @@ const Sidebar = ({page, setPage}) => {
                     </span>
                     <span className="nav-label">Board</span>
                 </button>
-                <button onClick={() => setPage('people')} className={`nav-link $(page === 'board' ? "active" : ""}`} data-page="people">
+                <button onClick={() => setPage('people')} className={`nav-link${page === 'people' ? " active" : ""}`} data-page="people">
                     <span className="nav-icon">
                         <svg
                             viewBox="0 0 24 24"
@@ -37,7 +37,7 @@ const Sidebar = ({page, setPage}) => {
                     </span>
                     <span className="nav-label">People</span>
                 </button>
-                <button onClick={() => setPage('activity')} className={`nav-link $(page === 'board' ? "active" : ""}`} data-page="activity">
+                <button onClick={() => setPage('activity')} className={`nav-link${page === 'activity' ? " active" : ""}`} data-page="activity">
                     <span className="nav-icon">
                         <svg
                             viewBox="0 0 24 24"
@@ -49,7 +49,7 @@ const Sidebar = ({page, setPage}) => {
                     </span>
                     <span className="nav-label">Activity</span>
                 </button>
-                <button onClick={() => setPage('settings')} className={`nav-link $(page === 'board' ? "active" : ""}`} data-page="settings">
+                <button onClick={() => setPage('settings')} className={`nav-link${page === 'settings' ? " active" : ""}`} data-page="settings">
                     <span className="nav-icon">
                         <svg
                             viewBox="0 0 24 24"
